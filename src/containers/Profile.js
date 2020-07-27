@@ -80,7 +80,7 @@ const Profile = (props) => {
                     </TwoThirdCol>
                     <OneThirdCol>
                         <Biography
-                            style={{marginBottom: '0.5rem'}}
+                            style={{marginBottom: '1rem'}}
                             bio={
                                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at ultrices orci. Phasellus\n' +
                                 '                            nisl felis, egestas in leo a, sodales fringilla magna. Nulla luctus turpis felis, ut auctor sem tincidunt ut.\n' +
@@ -88,7 +88,7 @@ const Profile = (props) => {
                                 '                            dictum augue, et pretium velit leo eu quam. Vestibulum sit amet posuere justo. Duis nec tellus massa.'
                             }
                         />
-                        <Website style={{marginBottom: '0.5rem'}} link={'wwww.google.com'} />
+                        <Website style={{marginBottom: '2rem'}} link={'wwww.google.com'} />
                         <Skills skills={skills} />
 
                     </OneThirdCol>

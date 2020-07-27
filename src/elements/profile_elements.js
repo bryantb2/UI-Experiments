@@ -41,6 +41,7 @@ export const TagArrow = styled(ArrowIosForwardOutline)`
 `;
 
 export const WebLink = styled.a`
+    font-family: 'Piers-Regular';
     color: rgba(255,3,84,1);
 `;
 

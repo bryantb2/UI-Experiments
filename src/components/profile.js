@@ -34,6 +34,11 @@ const SkillsContainer = styled.div`
     flex-wrap: wrap;
 `;
 
+const BlankContainer = styled.div`
+    margin: 0;
+    padding: 0;
+`;
+
 export const UserProfile = (props) => (
     <UserProfileContainer>
         <RoundedImage
@@ -73,23 +78,23 @@ export const PersonalCategories = (props) => props.categories.map(category =>
 );
 
 export const Biography = (props) => (
-    <>
+    <BlankContainer style={props.style}>
         <GreyBoldSubHeader>Biography</GreyBoldSubHeader>
         <GreyThinTextSmall>
             {props.bio}
         </GreyThinTextSmall>
-    </>
+    </BlankContainer>
 );
 
 export const Website =  (props) => (
-    <>
+    <BlankContainer style={props.style}>
         <GreyBoldSubHeader>Website</GreyBoldSubHeader>
         <WebLink>{props.link}</WebLink>
-    </>
+    </BlankContainer>
 );
 
 export const Skills = (props) => (
-    <>
+    <BlankContainer style={props.style}>
         <GreyBoldSubHeader>Skills</GreyBoldSubHeader>
         <SkillsContainer>
             {props.skills.map((skill, index) =>
@@ -101,7 +106,7 @@ export const Skills = (props) => (
                 </TagBox>
             )}
         </SkillsContainer>
-    </>
+    </BlankContainer>
 );
 
 export const SocialInteraction = (props) => null;
