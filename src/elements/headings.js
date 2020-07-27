@@ -38,3 +38,8 @@ export const GreyThinTextSmall = styled.p`
     font-family: 'Piers-Regular';
     color: grey;
 `;
+
+export const WhiteThinTextSmall = styled.p`
+    font-family: 'Piers-Regular';
+    color: white;
+`;

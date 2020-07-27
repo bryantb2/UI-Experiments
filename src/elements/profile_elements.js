@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import {ArrowIosForwardOutline} from "@styled-icons/evaicons-outline/ArrowIosForwardOutline";
+import React from "react";
 
 export const RoundedImage = styled.img`
     object-fit: cover;
@@ -18,11 +20,24 @@ export const ProfileFollowCount = styled.div`
 `;
 
 export const TagBox = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 15px;
-    padding: 1rem 2rem;
     color: white;
-    background-color: ${props => props.color}
+    padding: 0.5rem 1rem;
+    background-color: ${props => props.color};
     border-radius: 15px;
+    font-family: 'Piers-Regular';
+    color: white;
+    white-space: nowrap;
+    margin-bottom: 1rem;
+    margin-right: 0.5rem
+`;
+
+export const TagArrow = styled(ArrowIosForwardOutline)`
+    height: 1.5rem;
+    margin-left: 0.5rem;
 `;
 
 export const WebLink = styled.a`

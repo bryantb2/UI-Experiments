@@ -6,12 +6,14 @@ import {
     BlackBoldTextSmall,
     BlackBoldTextLarge,
     GreyThinTextSmall,
+    WhiteThinTextSmall,
     OrangeGradient,
     BlackThinTextSmall,
     GreyBoldSubHeader,
     TagBox,
     WebLink,
-    ProfileColors
+    ProfileColors,
+    TagArrow
 } from '../elements';
 
 const UserProfileContainer = styled.div`
@@ -25,6 +27,11 @@ const StatsContainer = styled.div`
 
 const StatItemContainer = styled.div`
     width: 25%;
+`;
+
+const SkillsContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
 `;
 
 export const UserProfile = (props) => (
@@ -61,13 +68,9 @@ export const ProfileStats = (props) => (
     </StatsContainer>
 );
 
-export const PersonalCategories = (props) => {
-    const categories =
-        ['Collections', 'Team', 'Work in Progress', 'Blog', 'Archives'].map(categoryName =>
-            <GreyThinTextSmall style={{fontSize: '15pt'}}>{categoryName}</GreyThinTextSmall>
-    );
-    return (<>{categories}</>);
-};
+export const PersonalCategories = (props) => props.categories.map(category =>
+    <GreyThinTextSmall key={category} style={{fontSize: '15pt'}}>{category}</GreyThinTextSmall>
+);
 
 export const Biography = (props) => (
     <>
@@ -88,12 +91,17 @@ export const Website =  (props) => (
 export const Skills = (props) => (
     <>
         <GreyBoldSubHeader>Skills</GreyBoldSubHeader>
-        {props.skills.map((skill, index) => {
-            if (index < ProfileColors.length - 1)
-                return (<TagBox key={skill} color={ProfileColors[index]} />);
-            else
-                return (<TagBox key={skill} color={ProfileColors[index % ProfileColors.length]} />);
-            }
-        )}
+        <SkillsContainer>
+            {props.skills.map((skill, index) =>
+                <TagBox
+                    key={skill}
+                    color={ProfileColors[index < (ProfileColors.length - 1) ? index : index % ProfileColors.length]}
+                >
+                    {skill} <TagArrow />
+                </TagBox>
+            )}
+        </SkillsContainer>
     </>
 );
+
+export const SocialInteraction = (props) => null;

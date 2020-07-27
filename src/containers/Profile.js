@@ -27,7 +27,16 @@ import testImage from '../images/profileImage.jpg';
 import testBackgroundImage from '../images/mountainsBG.jpg';
 
 const Profile = (props) => {
-    const collections = Array(5).fill(0);
+    const collections = [
+        {name: 'Test 1', link: testImage},
+        {name: 'Test 2', link: testImage},
+        {name: 'Test 3', link: testImage},
+        {name: 'Test 4', link: testImage},
+        {name: 'Test 5', link: testImage},
+    ];
+    const skills = ['Adobe Photoshop', 'VueJS', 'Adobe XD CC'];
+    const categories = ['Collections', 'Team', 'Work in Progress', 'Blog', 'Archives'];
+
     return (
         <GutterGrid>
             <OneThirdColMarg>
@@ -42,7 +51,7 @@ const Profile = (props) => {
                     likeCount={18000}
                 />
                 <LineDivider />
-                <PersonalCategories />
+                <PersonalCategories categories={categories} />
             </OneThirdColMarg>
             <TwoThirdColMarg>
                 <UICardBackground backgroundImage={testBackgroundImage} title={"Mountains"}>
@@ -52,9 +61,10 @@ const Profile = (props) => {
                     <TwoThirdCol>
                         <UICard title={"Popular Collections"}>
                             {
-                                collections.map(val =>
+                                collections.map(collection =>
                                     <RoundedImage
-                                        src={testImage}
+                                        key={collection.name}
+                                        src={collection.link}
                                         width="100px"
                                     />
                                 )
@@ -79,7 +89,7 @@ const Profile = (props) => {
                             }
                         />
                         <Website style={{marginBottom: '0.5rem'}} link={'wwww.google.com'} />
-                        <Skills skills={[ 'Adobe Photoshop', 'Adobe XD CC', 'VueJS']} />
+                        <Skills skills={skills} />
 
                     </OneThirdCol>
                 </NoGutterGrid>
