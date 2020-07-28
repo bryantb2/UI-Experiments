@@ -3,9 +3,9 @@ import {
     GutterGrid,
     NoGutterGrid,
     OneThirdCol,
-    OneThirdColMarg,
     TwoThirdCol,
-    TwoThirdColMarg,
+    OneFifthCol,
+    FourFifthsCol,
     ProfileStats,
     UserProfile,
     UICard,
@@ -14,13 +14,12 @@ import {
     UITeamCard,
     Website,
     Skills,
-    Biography
+    Biography,
+    RealTimeClock
 } from '../components';
 import {
     OrangeGradient,
     RoundedImage,
-    GreyBoldSubHeader,
-    GreyThinTextSmall,
     LineDivider
 } from "../elements";
 import testImage from '../images/profileImage.jpg';
@@ -39,7 +38,7 @@ const Profile = (props) => {
 
     return (
         <GutterGrid>
-            <OneThirdColMarg>
+            <OneFifthCol>
                 <UserProfile
                     name={'Jenna Smith'}
                     bioTitle={'Art Director'}
@@ -52,8 +51,8 @@ const Profile = (props) => {
                 />
                 <LineDivider />
                 <PersonalCategories categories={categories} />
-            </OneThirdColMarg>
-            <TwoThirdColMarg>
+            </OneFifthCol>
+            <FourFifthsCol>
                 <UICardBackground backgroundImage={testBackgroundImage} title={"Mountains"}>
                     <OrangeGradient>Featured Collections</OrangeGradient>
                 </UICardBackground>
@@ -80,20 +79,19 @@ const Profile = (props) => {
                     </TwoThirdCol>
                     <OneThirdCol>
                         <Biography
-                            style={{marginBottom: '1rem'}}
+                            style={{marginBottom: '2rem'}}
                             bio={
                                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at ultrices orci. Phasellus\n' +
                                 '                            nisl felis, egestas in leo a, sodales fringilla magna. Nulla luctus turpis felis, ut auctor sem tincidunt ut.\n' +
-                                '                            Donec nisi nisl, imperdiet a pulvinar id, varius a erat. Vivamus congue, eros quis viverra bibendum, ipsum ligula\n' +
-                                '                            dictum augue, et pretium velit leo eu quam. Vestibulum sit amet posuere justo. Duis nec tellus massa.'
+                                '                            Donec nisi nisl, imperdiet a pulvinar id, varius a erat. Vivamus congue, eros quis viverra bibendum, ipsum ligula'
                             }
                         />
                         <Website style={{marginBottom: '2rem'}} link={'wwww.google.com'} />
                         <Skills skills={skills} />
-
                     </OneThirdCol>
                 </NoGutterGrid>
-            </TwoThirdColMarg>
+            </FourFifthsCol>
+            <RealTimeClock />
         </GutterGrid>
     );
 }

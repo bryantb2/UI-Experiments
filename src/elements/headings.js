@@ -10,13 +10,11 @@ export const WhiteBoldHeader = styled.h1`
 export const BlackThinHeader = styled.h1`
     font-family: 'Piers-Regular';
     color: black;
-    margin-top: 0;
 `;
 
 export const GreyBoldSubHeader = styled.h3`
     font-family: 'Piers-Bold';
     color: grey;
-    margin-top: 0;
 `;
 
 // paragraph styles
