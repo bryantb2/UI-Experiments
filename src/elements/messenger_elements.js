@@ -31,7 +31,7 @@ const StyledDrblIcon = styled(Dribbble)`
 `;
 
 const StyledTwtrIcon = styled(Twitter)`
-    color: blue;
+    color: lightblue;
     width: 40%;
 `;
 
