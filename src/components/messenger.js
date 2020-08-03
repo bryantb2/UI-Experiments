@@ -7,6 +7,7 @@ import {
     TwitterIconBubble,
     ClockHeader,
     MessageTextBubble,
+    UnstyledInput,
     GreyThinTextSmall
 } from '../elements';
 
@@ -20,6 +21,17 @@ const MainContentContainer = styled.div`
 const ContentItem = styled.div`
     display: flex;
     flex-wrap: no-wrap;
+`;
+
+const ClockContent = styled(ContentItem)`
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-direction: column;
+`;
+
+const IconContent = styled(ContentItem)`
+    flex-grow: 2;
+    justify-content: space-between;
 `;
 
 const RealTimeClock = props => {
@@ -40,23 +52,25 @@ const RealTimeClock = props => {
     }, []);
 
     return (
-        <ClockHeader>{moment(time).format("hh:mm A")}</ClockHeader>
+        <ClockHeader style={{...props.style}}>{moment(time).format("hh:mm A")}</ClockHeader>
     )
 };
 
 export const MessengerDashboard = props => (
     <div>
-        <MessageTextBubble>Send a message to Jenna...</MessageTextBubble>
-        <GreyThinTextSmall style={{textAlign: 'right'}}>{props.location}</GreyThinTextSmall>
+        <MessageTextBubble>
+            <UnstyledInput type={'text'} placeholder={'Send a message to Jenna...'} />
+        </MessageTextBubble>
         <MainContentContainer>
-            <ContentItem style={{flexGrow: '2', justifyContent: 'space-between'}}>
+            <IconContent>
                 <MessageIconBubble />
                 <DribbbleIconBubble />
                 <TwitterIconBubble />
-            </ContentItem>
-            <ContentItem style={{flexGrow: '1', justifyContent: 'flex-end'}}>
-                <RealTimeClock />
-            </ContentItem>
+            </IconContent>
+            <ClockContent>
+                <GreyThinTextSmall style={{marginBottom: 0, textAlign: 'right'}}>{props.location}</GreyThinTextSmall>
+                <RealTimeClock style={{marginTop: 0, textAlign: 'right'}} />
+            </ClockContent>
         </MainContentContainer>
     </div>
 )

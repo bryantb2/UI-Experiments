@@ -22,7 +22,7 @@ const BlankContainer = styled.div`
 export const Biography = (props) => (
     <BlankContainer style={props.style}>
         <GreyBoldSubHeader style={{marginBottom: '0.5rem'}}>Biography</GreyBoldSubHeader>
-        <GreyThinTextSmall>
+        <GreyThinTextSmall style={{marginTop: 0}}>
             {props.bio}
         </GreyThinTextSmall>
     </BlankContainer>

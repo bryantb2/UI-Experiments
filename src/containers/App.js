@@ -1,14 +1,14 @@
 import React from 'react';
 import GlobalFonts, { theme } from '../styleConstants';
 import Profile from './Profile'
-import { ThemeProvder } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 function App() {
   return (
-    <ThemeProvder theme={theme}>
+    <ThemeProvider theme={theme}>
         <GlobalFonts />
         <Profile />
-    </ThemeProvder>
+    </ThemeProvider>
   );
 }
 
