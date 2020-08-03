@@ -32,7 +32,7 @@ export const TagBox = styled.div`
     color: white;
     white-space: nowrap;
     margin-bottom: 1rem;
-    margin-right: 0.5rem
+    margin-right: 0.5rem;
 `;
 
 export const TagArrow = styled(ArrowIosForwardOutline)`

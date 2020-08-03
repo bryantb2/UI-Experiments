@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
     RoundedImage,
     BlackThinHeader,
@@ -9,9 +9,10 @@ import {
     BlackThinTextSmall
 } from '../elements';
 
-const UserProfileContainer = styled.div`
-    margin-bottom: 1.5rem;
-`;
+const UserProfileContainer = styled.div(
+    props => css`
+        margin-bottom: 1.5rem;
+    `);
 
 const StatsContainer = styled.div`
     display: flex;

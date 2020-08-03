@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const GutterGrid = styled.div`
     display: flex;
@@ -26,9 +26,17 @@ export const TwoThirdCol = styled.div`
     width: 64%;
 `;
 
-export const OneFifthCol = styled.div`
-    width: 20%;
-`;
+export const OneFifthCol = styled.div(
+    props => css`
+        width: 20%;
+        @media (${props.theme.screenQueries.mobileS}) {
+            width: 100%;
+        }
+        
+        @media (${props.theme.screenQueries.tablet}) {
+            width: 20%;
+        }
+    `);
 
 export const FourFifthsCol = styled.div`
     width: 80%;
