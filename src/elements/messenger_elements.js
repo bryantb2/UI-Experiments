@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import { Message, MessageSquare } from '@styled-icons/boxicons-solid';
+import { MessageAlt } from '@styled-icons/boxicons-solid';
 import { Dribbble, Twitter } from '@styled-icons/boxicons-logos';
 
 const MediaIconBubble = styled.a`
@@ -10,24 +10,28 @@ const MediaIconBubble = styled.a`
     text-decoration: none;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 25px;
-    width: 25px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
+    @media (max-width: 1080px) {
+        height: 85px;
+        width: 85px;
+    }
 `;
 
-const StyledMsgIcon = styled(MessageSquare)`
+const StyledMsgIcon = styled(MessageAlt)`
     color: grey;
-    width: 25%;
+    width: 40%;
 `;
 
 const StyledDrblIcon = styled(Dribbble)`
     color: red;
-    width: 25%;
+    width: 40%;
 `;
 
 const StyledTwtrIcon = styled(Twitter)`
-    color: light-blue;
-    width: 25%;
+    color: blue;
+    width: 40%;
 `;
 
 export const MessageIconBubble = props => (
@@ -54,9 +58,15 @@ export const ClockHeader = styled.h1`
     color: black;
 `;
 
-export const MessageTextBubble = styled(Message)`
-    height: 12px;
+export const MessageTextBubble = styled.div`
+    display: flex;
+    align-items: center;
+    height: 15px;
     width: 100%;
+    font-family: 'Piers-Regular';
+    color: lightgrey;
+    white-space: nowrap;
+    padding: 0.7rem 1rem;
+    border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    color: white;
 `;

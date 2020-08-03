@@ -8,6 +8,7 @@ import piersRegular from './PierSans-Regular.otf';
 console.log('logging font import');
 console.log(piersBold);
 
+// global css styles
 export default createGlobalStyle`
     @font-face {
         font-family: 'Piers-Bold';
@@ -34,3 +35,30 @@ export default createGlobalStyle`
         font-style: normal;
     }
 `;
+
+// theme provider setup
+const size = {
+    mobileS: '320px',
+    mobileM: '375px',
+    mobileL: '425px',
+    tablet: '768px',
+    laptop: '1024px',
+    laptopL: '1440px',
+    desktop: '2560px'
+};
+
+const devices = {
+    mobileS: `(min-width: ${size.mobileS})`,
+    mobileM: `(min-width: ${size.mobileM})`,
+    mobileL: `(min-width: ${size.mobileL})`,
+    tablet: `(min-width: ${size.tablet})`,
+    laptop: `(min-width: ${size.laptop})`,
+    laptopL: `(min-width: ${size.laptopL})`,
+    desktop: `(min-width: ${size.desktop})`,
+    desktopL: `(min-width: ${size.desktop})`
+};
+
+export const theme = {
+    screenQueries: devices
+}
+

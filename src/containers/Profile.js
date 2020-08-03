@@ -15,7 +15,7 @@ import {
     Website,
     Skills,
     Biography,
-    RealTimeClock
+    MessengerDashboard
 } from '../components';
 import {
     OrangeGradient,
@@ -88,10 +88,12 @@ const Profile = (props) => {
                         />
                         <Website style={{marginBottom: '2rem'}} link={'wwww.google.com'} />
                         <Skills skills={skills} />
+                        <MessengerDashboard
+                            location={'Eugene, OR, United States'}
+                        />
                     </OneThirdCol>
                 </NoGutterGrid>
             </FourFifthsCol>
-            <RealTimeClock />
         </GutterGrid>
     );
 }

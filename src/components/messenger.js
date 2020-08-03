@@ -6,14 +6,23 @@ import {
     DribbbleIconBubble,
     TwitterIconBubble,
     ClockHeader,
-    MessageTextBubble
+    MessageTextBubble,
+    GreyThinTextSmall
 } from '../elements';
 
-const FlexContainer = styled.div`
-    
+const MainContentContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 `;
 
-export const RealTimeClock = props => {
+const ContentItem = styled.div`
+    display: flex;
+    flex-wrap: no-wrap;
+`;
+
+const RealTimeClock = props => {
     const [time, setTime] = useState(moment());
     //console.log('time pre-format is: ' + time);
     //console.log('logging time in clock: ' + moment(time).format("hh:mm A"));
@@ -34,3 +43,20 @@ export const RealTimeClock = props => {
         <ClockHeader>{moment(time).format("hh:mm A")}</ClockHeader>
     )
 };
+
+export const MessengerDashboard = props => (
+    <div>
+        <MessageTextBubble>Send a message to Jenna...</MessageTextBubble>
+        <GreyThinTextSmall style={{textAlign: 'right'}}>{props.location}</GreyThinTextSmall>
+        <MainContentContainer>
+            <ContentItem style={{flexGrow: '2', justifyContent: 'space-between'}}>
+                <MessageIconBubble />
+                <DribbbleIconBubble />
+                <TwitterIconBubble />
+            </ContentItem>
+            <ContentItem style={{flexGrow: '1', justifyContent: 'flex-end'}}>
+                <RealTimeClock />
+            </ContentItem>
+        </MainContentContainer>
+    </div>
+)
