@@ -5,7 +5,7 @@ import {
     GreyThinTextSmall,
     WhiteBoldHeader,
     BlackThinHeader,
-    RoundedImage,
+    ProfileImage,
     ProfileFollowCount,
     OrangeGradient
 } from '../elements';
@@ -77,7 +77,7 @@ export const UITeamCard = (props) => (
       <GreyBoldSubHeader>{props.title}</GreyBoldSubHeader>
       <TeamContentContainer>
         <RelativeParent style={{marginRight: '2rem'}}>
-            <RoundedImage
+            <ProfileImage
                 src={props.teamImage}
                 width={'190px'}
             />

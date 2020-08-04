@@ -1,10 +1,27 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {ArrowIosForwardOutline} from "@styled-icons/evaicons-outline/ArrowIosForwardOutline";
 import React from "react";
 
-export const RoundedImage = styled.img`
+export const ProfileImage = styled.img(
+    props => css`
+        object-fit: cover;
+        border-radius: 50%;
+        
+        @media (${props.theme.screenQueries.mobileS}) {
+            width: 120px;
+            height: 120px;
+        }
+        @media (${props.theme.screenQueries.tablet}) {
+            width: 200px;
+            height: 200px;
+        } 
+    `);
+
+export const CollectionImage = styled.img`
     object-fit: cover;
     border-radius: 50%;
+    width: 120px;
+    height: 120px;
 `;
 
 export const ProfileFollowCount = styled.div`

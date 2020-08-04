@@ -19,7 +19,7 @@ import {
 } from '../components';
 import {
     OrangeGradient,
-    RoundedImage,
+    CollectionImage,
     LineDivider
 } from "../elements";
 import testImage from '../images/profileImage.jpg';
@@ -61,7 +61,7 @@ const Profile = (props) => {
                         <UICard title={"Popular Collections"}>
                             {
                                 collections.map(collection =>
-                                    <RoundedImage
+                                    <CollectionImage
                                         key={collection.name}
                                         src={collection.link}
                                         width="100px"
