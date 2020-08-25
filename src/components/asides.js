@@ -50,3 +50,7 @@ export const Skills = (props) => (
         </SkillsContainer>
     </BlankContainer>
 );
+
+export const CreditCaption = props => (
+    <GreyThinTextSmall>The original design belongs to <a href={'https://dribbble.com/BLVCKLNGS'}>Hugo</a></GreyThinTextSmall>
+);

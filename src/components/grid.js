@@ -32,12 +32,18 @@ export const OneFifthCol = styled.div(
         @media (${props.theme.screenQueries.mobileS}) {
             width: 100%;
         }
-        
         @media (${props.theme.screenQueries.tablet}) {
             width: 20%;
         }
     `);
 
-export const FourFifthsCol = styled.div`
-    width: 80%;
-`;
+export const FourFifthsCol = styled.div(
+    props => css`
+        width: 80%;
+        @media (${props.theme.screenQueries.mobileS}) {
+            width: 100%;
+        }
+        @media (${props.theme.screenQueries.tablet}) {
+            width: 80%;
+        }
+    `);

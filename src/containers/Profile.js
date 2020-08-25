@@ -15,7 +15,8 @@ import {
     Website,
     Skills,
     Biography,
-    MessengerDashboard
+    MessengerDashboard,
+    CreditCaption
 } from '../components';
 import {
     OrangeGradient,
@@ -93,6 +94,7 @@ const Profile = (props) => {
                         />
                     </OneThirdCol>
                 </NoGutterGrid>
+                <CreditCaption />
             </FourFifthsCol>
         </GutterGrid>
     );
