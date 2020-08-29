@@ -27,8 +27,7 @@ const CardContainer = styled.div(
             props.BG === true ? 'none' : 'white'
         };
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    `
-);
+    `);
 
 const CardChildContentContainer = styled.div`
     display: flex;
@@ -93,10 +92,22 @@ export const UITeamCard = (props) => (
   </CardContainer>
 );
 
+const ScalableHeader = styled(WhiteBoldHeader)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        font-size: 35pt;
+    }   
+    @media (${props => props.theme.screenQueries.tablet}) {
+        font-size: 50pt;
+    }      
+    @media (${props => props.theme.screenQueries.laptop}) {
+        font-size: 80pt;
+    }   
+`;
+
 export const UICardBackground = (props) => (
     <CardContainer BG={true} BGSource={props.backgroundImage} size={'300px'}>
         <CardVerticalContentContainer>
-            <WhiteBoldHeader style={{textAlign: 'center', marginBottom: '1rem'}}>{props.title}</WhiteBoldHeader>
+            <ScalableHeader style={{textAlign: 'center', marginBottom: '1rem'}}>{props.title}</ScalableHeader>
             <CardChildContentContainer style={{justifyContent: 'center'}}>
                 {props.children}
             </CardChildContentContainer>

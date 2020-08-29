@@ -32,7 +32,7 @@ export const OneFifthCol = styled.div(
         @media (${props.theme.screenQueries.mobileS}) {
             width: 100%;
         }
-        @media (${props.theme.screenQueries.tablet}) {
+        @media (${props.theme.screenQueries.laptop}) {
             width: 20%;
         }
     `);

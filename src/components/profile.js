@@ -15,16 +15,22 @@ const UserProfileContainer = styled.div(
         margin-bottom: 1.5rem;
         @media (${props.theme.screenQueries.mobileM}) {
             display: flex;
+            align-items: center;
         }
-        @media (${props.theme.screenQueries.tablet}) {
-            display: revert;
+        @media (${props.theme.screenQueries.laptop}) {
+            flex-direction: column;
+            align-items: revert;
         } 
     `);
 
 const ProfileInfo = styled.div(
     props => css`
+        @media (${props.theme.screenQueries.mobileS}) {
+            display: flex;
+            flex-direction: column;
+        }
         @media (${props.theme.screenQueries.mobileM}) {
-            margin-left: 1.25rem;
+            margin-left: 0.75rem;
             flex-grow: 2;
         }
         @media (${props.theme.screenQueries.tablet}) {
@@ -34,21 +40,46 @@ const ProfileInfo = styled.div(
     `);
 
 const UserName = styled(BlackThinHeader)`
-    @media (${props => props.theme.screenQueries.mobileM}) {
+    @media (${props => props.theme.screenQueries.mobileS}) {
         margin: 0;
+        text-align: center;
     }
-    @media (${props => props.theme.screenQueries.tablet}) {
+    @media (${props => props.theme.screenQueries.mobileM}) {
+        text-align: left;
+    } 
+    @media (${props => props.theme.screenQueries.laptop}) {
         margin: revert;
     } 
 `;
 
 const UserBio = styled(BlackThinTextSmall)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
     @media (${props => props.theme.screenQueries.mobileM}) {
         margin: 0.4rem 0rem 1.2rem 0rem;
+        text-align: revert;
     }
     @media (${props => props.theme.screenQueries.tablet}) {
-        margin: revert;
+        margin-bottom: 3rem;
     } 
+    @media (${props => props.theme.screenQueries.laptop}) {
+        margin: 0 0 2rem 0;
+    } 
+`;
+
+const FollowButton = styled(OrangeGradient)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        display: block;
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    @media (${props => props.theme.screenQueries.mobileM}) {
+        margin-right: revert;
+        margin-left: revert;
+    }
 `;
 
 export const UserProfile = (props) => (
@@ -57,24 +88,29 @@ export const UserProfile = (props) => (
         <ProfileInfo>
             <UserName>{props.name}</UserName>
             <UserBio>{props.bioTitle}</UserBio>
-            <OrangeGradient>Follow</OrangeGradient>
+            <FollowButton>Follow</FollowButton>
         </ProfileInfo>
     </UserProfileContainer>
 );
 
 const StatsContainer = styled.div`
     display: flex;
-    margin-bottom: 2rem;
-    @media (${props => props.theme.screenQueries.mobileM}) {
-        justify-content: space-between;
-    }
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+    
     @media (${props => props.theme.screenQueries.tablet}) {
-        justify-content: revert;
+        justify-content: flex-start;
     } 
 `;
 
 const StatItemContainer = styled.div`
-    width: 25%;
+    text-align: center;
+    
+    @media (${props => props.theme.screenQueries.tablet}) {
+        margin-right: 2rem;
+        text-align: left;
+    } 
 `;
 
 export const ProfileStats = (props) => (
@@ -119,8 +155,29 @@ const CategoryText = styled(GreyThinTextSmall)`
     }
 `;
 
-export const PersonalCategories = (props) => props.categories.map(category =>
-    <CategoryLink href="#">
-        <CategoryText key={category} style={{fontSize: '15pt'}}>{category}</CategoryText>
-    </CategoryLink>
+const CategoriesContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    @media (${props => props.theme.screenQueries.tablet}) {
+        flex-direction: row;
+    } 
+    @media (${props => props.theme.screenQueries.laptop}) {
+        flex-direction: column;
+        text-align: left;
+        margin-bottom: revert;
+    } 
+`;
+
+export const PersonalCategories = (props) => (
+    <CategoriesContainer>
+        {props.categories.map(category =>
+        <CategoryLink href="#">
+            <CategoryText key={category} style={{fontSize: '15pt'}}>{category}</CategoryText>
+        </CategoryLink>
+        )}
+    </CategoriesContainer>
 );

@@ -8,12 +8,29 @@ export const ProfileImage = styled.img(
         border-radius: 50%;
         
         @media (${props.theme.screenQueries.mobileS}) {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1rem;
+        }
+        @media (${props.theme.screenQueries.mobileM}) {
+            width: 130px;
+            height: 130px;
+            display: revert;
+            margin-left: revert;
+            margin-right: revert;
+            margin-bottom: revert;
+        }
+        @media (${props.theme.screenQueries.mobileL}) {
+            width: 150px;
+            height: 150px;
         }
         @media (${props.theme.screenQueries.tablet}) {
             width: 200px;
             height: 200px;
+            margin-right: 2rem;
         } 
     `);
 
@@ -67,6 +84,10 @@ export const LineDivider = styled.hr`
     width: 75%;
     margin-left: 0;
     margin-bottom: 2rem;
+    
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        display: none;
+    } 
 `;
 
 export const ProfileColors = [
