@@ -7,7 +7,6 @@ import {
     OneFifthCol,
     FourFifthsCol,
     ProfileStats,
-    UserProfile,
     UICard,
     UICardBackground,
     PersonalCategories,
@@ -18,6 +17,7 @@ import {
     MessengerDashboard,
     CreditCaption
 } from '../components';
+import UserProfile from '../containers/User_Profile';
 import {
     OrangeGradient,
     CollectionImage,
@@ -27,15 +27,6 @@ import testImage from '../images/profileImage.jpg';
 import testBackgroundImage from '../images/mountainsBG.jpg';
 
 // create flexible containers for content
-const UserInfoContainer = styled(OneFifthCol)`
-    @media (${props => props.theme.screenQueries.mobileS}) {
-        width: 100%;
-    }
-    @media (${props => props.theme.screenQueries.laptop}) {
-        width: 20%;
-    }
-`;
-
 const MainContentContainer = styled(FourFifthsCol)`
     @media (${props => props.theme.screenQueries.mobileS}) {
         width: 100%;
@@ -75,24 +66,11 @@ const Profile = (props) => {
         {name: 'Test 5', link: testImage},
     ];
     const skills = ['Adobe Photoshop', 'VueJS', 'Adobe XD CC'];
-    const categories = ['Collections', 'Team', 'Work in Progress', 'Blog', 'Archives'];
+    //const categories = ['Collections', 'Team', 'Work in Progress', 'Blog', 'Archives'];
 
     return (
         <>
-            <UserInfoContainer>
-                <UserProfile
-                    name={'Jenna Smith'}
-                    bioTitle={'Art Director'}
-                    image={testImage}
-                />
-                <ProfileStats
-                    collectionCount={42}
-                    followCount={1302}
-                    likeCount={18000}
-                />
-                <LineDivider />
-                <PersonalCategories categories={categories} />
-            </UserInfoContainer>
+            <UserProfile />
             <MainContentContainer>
                 <UICardBackground backgroundImage={testBackgroundImage} title={"Mountains"}>
                     <OrangeGradient>Featured Collections</OrangeGradient>
