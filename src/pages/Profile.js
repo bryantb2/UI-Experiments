@@ -1,6 +1,6 @@
 import React from 'react';
+import styled, {css} from 'styled-components';
 import {
-    GutterGrid,
     NoGutterGrid,
     OneThirdCol,
     TwoThirdCol,
@@ -26,6 +26,46 @@ import {
 import testImage from '../images/profileImage.jpg';
 import testBackgroundImage from '../images/mountainsBG.jpg';
 
+// create flexible containers for content
+const UserInfoContainer = styled(OneFifthCol)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        width: 100%;
+    }
+    @media (${props => props.theme.screenQueries.laptop}) {
+        width: 20%;
+    }
+`;
+
+const MainContentContainer = styled(FourFifthsCol)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        width: 100%;
+    }
+    @media (${props => props.theme.screenQueries.laptop}) {
+        width: 75%;
+    }
+    @media (${props => props.theme.screenQueries.laptopL}) {
+        width: 80%;
+    }
+`;
+
+const UserCardContainer = styled(TwoThirdCol)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        width: 100%;
+    }
+    @media (${props => props.theme.screenQueries.laptop}) {
+        width: 64%;
+    }
+`;
+
+const UserAsideContainer = styled(OneThirdCol)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        width: 100%;
+    }
+    @media (${props => props.theme.screenQueries.laptop}) {
+        width: 32%;
+    }
+`;
+
 const Profile = (props) => {
     const collections = [
         {name: 'Test 1', link: testImage},
@@ -38,8 +78,8 @@ const Profile = (props) => {
     const categories = ['Collections', 'Team', 'Work in Progress', 'Blog', 'Archives'];
 
     return (
-        <GutterGrid>
-            <OneFifthCol>
+        <>
+            <UserInfoContainer>
                 <UserProfile
                     name={'Jenna Smith'}
                     bioTitle={'Art Director'}
@@ -52,13 +92,13 @@ const Profile = (props) => {
                 />
                 <LineDivider />
                 <PersonalCategories categories={categories} />
-            </OneFifthCol>
-            <FourFifthsCol>
+            </UserInfoContainer>
+            <MainContentContainer>
                 <UICardBackground backgroundImage={testBackgroundImage} title={"Mountains"}>
                     <OrangeGradient>Featured Collections</OrangeGradient>
                 </UICardBackground>
                 <NoGutterGrid>
-                    <TwoThirdCol>
+                    <UserCardContainer>
                         <UICard title={"Popular Collections"}>
                             {
                                 collections.map(collection =>
@@ -77,8 +117,8 @@ const Profile = (props) => {
                             creationDate={2013}
                             followCount={42}
                         />
-                    </TwoThirdCol>
-                    <OneThirdCol>
+                    </UserCardContainer>
+                    <UserAsideContainer>
                         <Biography
                             style={{marginBottom: '1.55rem'}}
                             bio={
@@ -92,11 +132,11 @@ const Profile = (props) => {
                         <MessengerDashboard
                             location={'Eugene, OR, USA'}
                         />
-                    </OneThirdCol>
+                    </UserAsideContainer>
                 </NoGutterGrid>
                 <CreditCaption />
-            </FourFifthsCol>
-        </GutterGrid>
+            </MainContentContainer>
+        </>
     );
 }
 

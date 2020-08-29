@@ -9,7 +9,6 @@ import {
     BlackThinTextSmall
 } from '../elements';
 
-// todo: optimizing for laptop and desktop screens
 const UserProfileContainer = styled.div(
     props => css`
         margin-bottom: 1.5rem;
@@ -82,9 +81,37 @@ const FollowButton = styled(OrangeGradient)`
     }
 `;
 
+const ScalableImage = styled(ProfileImage)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        width: 140px;
+        height: 140px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+    }
+    @media (${props => props.theme.screenQueries.mobileM}) {
+        width: 130px;
+        height: 130px;
+        display: revert;
+        margin-left: revert;
+        margin-right: revert;
+        margin-bottom: revert;
+    }
+    @media (${props => props.theme.screenQueries.mobileL}) {
+        width: 150px;
+        height: 150px;
+    }
+    @media (${props => props.theme.screenQueries.tablet}) {
+        width: 200px;
+        height: 200px;
+        margin-right: 2rem;
+    } 
+`;
+
 export const UserProfile = (props) => (
     <UserProfileContainer>
-        <ProfileImage src={props.image} />
+        <ScalableImage src={props.image} />
         <ProfileInfo>
             <UserName>{props.name}</UserName>
             <UserBio>{props.bioTitle}</UserBio>

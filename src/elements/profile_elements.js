@@ -2,37 +2,10 @@ import styled, { css } from 'styled-components';
 import {ArrowIosForwardOutline} from "@styled-icons/evaicons-outline/ArrowIosForwardOutline";
 import React from "react";
 
-export const ProfileImage = styled.img(
-    props => css`
-        object-fit: cover;
-        border-radius: 50%;
-        
-        @media (${props.theme.screenQueries.mobileS}) {
-            width: 140px;
-            height: 140px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 1rem;
-        }
-        @media (${props.theme.screenQueries.mobileM}) {
-            width: 130px;
-            height: 130px;
-            display: revert;
-            margin-left: revert;
-            margin-right: revert;
-            margin-bottom: revert;
-        }
-        @media (${props.theme.screenQueries.mobileL}) {
-            width: 150px;
-            height: 150px;
-        }
-        @media (${props.theme.screenQueries.tablet}) {
-            width: 200px;
-            height: 200px;
-            margin-right: 2rem;
-        } 
-    `);
+export const ProfileImage = styled.img`
+    object-fit: cover;
+    border-radius: 50%;
+`;
 
 export const CollectionImage = styled.img`
     object-fit: cover;
@@ -87,6 +60,9 @@ export const LineDivider = styled.hr`
     
     @media (${props => props.theme.screenQueries.mobileS}) {
         display: none;
+    } 
+    @media (${props => props.theme.screenQueries.laptopL}) {
+        display: revert;
     } 
 `;
 
