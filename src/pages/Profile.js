@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import {
     NoGutterGrid,
     FourFifthsCol,
-    CreditCaption
+    CreditCaption,
+    TwoThirdCol
 } from '../components';
 import UserProfile from '../containers/User_Profile';
 import UserAsideContent from '../containers/User_Aside';
-import UserSocialCard from '../containers/User_Social_Cards';
-import { FeaturedCollectionCard } from '../containers/Featured_Collections';
+import { FeaturedCollectionCard, FeaturedTeamCard, PopularCollectionsCard } from '../containers/UI_Cards';
 
 // create flexible containers for content
 const MainContentContainer = styled(FourFifthsCol)`
@@ -23,13 +23,25 @@ const MainContentContainer = styled(FourFifthsCol)`
     }
 `;
 
+const UserCardContainer = styled(TwoThirdCol)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        width: 100%;
+    }
+    @media (${props => props.theme.screenQueries.laptop}) {
+        width: 64%;
+    }
+`;
+
 const Profile = (props) =>  (
     <>
         <UserProfile />
         <MainContentContainer>
             <NoGutterGrid>
                 <FeaturedCollectionCard />
-                <UserSocialCard />
+                <UserCardContainer>
+                    <PopularCollectionsCard />
+                    <FeaturedTeamCard />
+                </UserCardContainer>
                 <UserAsideContent />
             </NoGutterGrid>
             <CreditCaption />

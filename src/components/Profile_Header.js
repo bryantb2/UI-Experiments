@@ -1,10 +1,8 @@
 import React from 'react';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
     ProfileImage,
     BlackThinHeader,
-    BlackBoldTextLarge,
-    GreyThinTextSmall,
     OrangeGradient,
     BlackThinTextSmall
 } from '../elements';
