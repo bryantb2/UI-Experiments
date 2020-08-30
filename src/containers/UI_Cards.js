@@ -4,7 +4,8 @@ import {
     VCenteredCard,
     FlexCard,
     TeamMemberIcon,
-    TeamDescription
+    TeamDescription,
+    CollectionsIconList
 } from "../components";
 import React from "react";
 import styled from "styled-components";
@@ -55,14 +56,6 @@ const collections = [
 export const PopularCollectionsCard = props => (
     <FlexCard hasBG={false}>
         <GreyBoldSubHeader style={{width: '100%'}}>Popular Collections</GreyBoldSubHeader>
-        {
-            collections.map(collection =>
-                <CollectionImage
-                    key={collection.name}
-                    src={collection.link}
-                    width="100px"
-                />
-            )
-        }
+        <CollectionsIconList collections={collections} />
     </FlexCard>
 );

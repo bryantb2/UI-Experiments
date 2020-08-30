@@ -4,10 +4,12 @@ import {
     NoGutterGrid,
     FourFifthsCol,
     CreditCaption,
-    TwoThirdCol
+    TwoThirdCol,
+    OneThirdCol
 } from '../components';
 import UserProfile from '../containers/User_Profile';
 import UserAsideContent from '../containers/User_Aside';
+import MessengerDashboard from '../containers/Messenger_Dashboard';
 import { FeaturedCollectionCard, FeaturedTeamCard, PopularCollectionsCard } from '../containers/UI_Cards';
 
 // create flexible containers for content
@@ -32,6 +34,16 @@ const UserCardContainer = styled(TwoThirdCol)`
     }
 `;
 
+const UserAsideContainer = styled(OneThirdCol)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        width: 100%;
+    }
+    @media (${props => props.theme.screenQueries.laptop}) {
+        width: 32%;
+    }
+`;
+
+
 const Profile = (props) =>  (
     <>
         <UserProfile />
@@ -42,7 +54,12 @@ const Profile = (props) =>  (
                     <PopularCollectionsCard />
                     <FeaturedTeamCard />
                 </UserCardContainer>
-                <UserAsideContent />
+                <UserAsideContainer>
+                    <UserAsideContent />
+                    <MessengerDashboard
+                        location={'Eugene, OR, USA'}
+                    />
+                </UserAsideContainer>
             </NoGutterGrid>
             <CreditCaption />
         </MainContentContainer>

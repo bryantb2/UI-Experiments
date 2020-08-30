@@ -8,19 +8,10 @@ import {
 } from "../components";
 import React from "react";
 
-const UserAsideContainer = styled(OneThirdCol)`
-    @media (${props => props.theme.screenQueries.mobileS}) {
-        width: 100%;
-    }
-    @media (${props => props.theme.screenQueries.laptop}) {
-        width: 32%;
-    }
-`;
-
 const skillsList = ['Adobe Photoshop', 'VueJS', 'Adobe XD CC'];
 
 export default () => (
-    <UserAsideContainer>
+    <>
         <Biography
             style={{marginBottom: '1.55rem'}}
             bio={
@@ -34,8 +25,5 @@ export default () => (
             link={'wwww.google.com'}
         />
         <Skills style={{marginBottom: '1.55rem'}} skills={skillsList} />
-        <MessengerDashboard
-            location={'Eugene, OR, USA'}
-        />
-    </UserAsideContainer>
+    </>
 );

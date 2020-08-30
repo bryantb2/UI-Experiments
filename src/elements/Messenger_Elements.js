@@ -3,7 +3,7 @@ import React from 'react';
 import { MessageAlt } from '@styled-icons/boxicons-solid';
 import { Dribbble, Twitter } from '@styled-icons/boxicons-logos';
 
-const MediaIconBubble = styled.a(
+export const MediaIconBubble = styled.a(
     props => css`
         display: flex;
         justify-content: center;
@@ -20,38 +20,20 @@ const MediaIconBubble = styled.a(
         }
     `);
 
-const StyledMsgIcon = styled(MessageAlt)`
+export const StyledMsgIcon = styled(MessageAlt)`
     color: grey;
     width: 40%;
 `;
 
-const StyledDrblIcon = styled(Dribbble)`
+export const StyledDrblIcon = styled(Dribbble)`
     color: red;
     width: 40%;
 `;
 
-const StyledTwtrIcon = styled(Twitter)`
+export const StyledTwtrIcon = styled(Twitter)`
     color: lightblue;
     width: 40%;
 `;
-
-export const MessageIconBubble = props => (
-    <MediaIconBubble>
-        <StyledMsgIcon />
-    </MediaIconBubble>
-);
-
-export const DribbbleIconBubble = props => (
-    <MediaIconBubble>
-        <StyledDrblIcon />
-    </MediaIconBubble>
-);
-
-export const TwitterIconBubble = props => (
-    <MediaIconBubble>
-        <StyledTwtrIcon />
-    </MediaIconBubble>
-);
 
 export const ClockHeader = styled.h1`
     font-family: 'Piers-Regular';

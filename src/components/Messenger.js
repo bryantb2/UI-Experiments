@@ -2,21 +2,16 @@ import styled from 'styled-components';
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
 import {
-    MessageIconBubble,
-    DribbbleIconBubble,
-    TwitterIconBubble,
     ClockHeader,
     MessageTextBubble,
     UnstyledInput,
-    GreyThinTextSmall
+    GreyThinTextSmall,
+    MediaIconBubble,
+    StyledMsgIcon,
+    StyledDrblIcon,
+    StyledTwtrIcon
 } from '../elements';
 
-const MainContentContainer = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-`;
 
 const ContentItem = styled.div`
     display: flex;
@@ -33,6 +28,24 @@ const IconContent = styled(ContentItem)`
     flex-grow: 2;
     justify-content: space-between;
 `;
+
+const MessageIconBubble = props => (
+    <MediaIconBubble href={props.link}>
+        <StyledMsgIcon />
+    </MediaIconBubble>
+);
+
+const DribbbleIconBubble = props => (
+    <MediaIconBubble href={props.link}>
+        <StyledDrblIcon />
+    </MediaIconBubble>
+);
+
+const TwitterIconBubble = props => (
+    <MediaIconBubble href={props.link}>
+        <StyledTwtrIcon />
+    </MediaIconBubble>
+);
 
 const RealTimeClock = props => {
     const [time, setTime] = useState(moment());
@@ -56,21 +69,23 @@ const RealTimeClock = props => {
     )
 };
 
-export const MessengerDashboard = props => (
-    <div>
-        <MessageTextBubble>
-            <UnstyledInput type={'text'} placeholder={'Send a message to Jenna...'} />
-        </MessageTextBubble>
-        <MainContentContainer>
-            <IconContent>
-                <MessageIconBubble />
-                <DribbbleIconBubble />
-                <TwitterIconBubble />
-            </IconContent>
-            <ClockContent>
-                <GreyThinTextSmall style={{marginBottom: 0, textAlign: 'right'}}>{props.location}</GreyThinTextSmall>
-                <RealTimeClock style={{marginTop: 0, textAlign: 'right'}} />
-            </ClockContent>
-        </MainContentContainer>
-    </div>
-)
+export const MessageInput = props => (
+    <MessageTextBubble>
+        <UnstyledInput type={'text'} placeholder={'Send a message to Jenna...'} />
+    </MessageTextBubble>
+);
+
+export const SocialIcons = props => (
+    <IconContent>
+        <MessageIconBubble  link={props.messageLink} />
+        <DribbbleIconBubble link={props.dribbbleLink} />
+        <TwitterIconBubble  link={props.twitterLink}/>
+    </IconContent>
+);
+
+export const ClockAndLocation = props => (
+    <ClockContent>
+        <GreyThinTextSmall style={{marginBottom: 0, textAlign: 'right'}}>{props.location}</GreyThinTextSmall>
+        <RealTimeClock style={{marginTop: 0, textAlign: 'right'}} />
+    </ClockContent>
+);

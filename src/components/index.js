@@ -6,3 +6,4 @@ export * from './Profile_Asides';
 export * from './Profile_Header';
 export * from './Profile_Stats';
 export * from './Team';
+export * from './Collections';
