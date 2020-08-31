@@ -1,5 +1,9 @@
 import testBackgroundImage from "../images/mountainsBG.jpg";
-import {Card, CollectionImage, GreyBoldSubHeader, OrangeGradient, WhiteBoldHeader} from "../elements";
+import {
+    GreyBoldSubHeader,
+    OrangeButton,
+    WhiteBoldHeader
+} from "../elements";
 import {
     VCenteredCard,
     FlexCard,
@@ -12,6 +16,7 @@ import styled from "styled-components";
 import testImage from "../images/profileImage.jpg";
 
 const ScalableHeader = styled(WhiteBoldHeader)`
+    margin-top: 0;
     @media (${props => props.theme.screenQueries.mobileS}) {
         font-size: 35pt;
     }   
@@ -23,11 +28,20 @@ const ScalableHeader = styled(WhiteBoldHeader)`
     }   
 `;
 
+const CollectionCard = styled(VCenteredCard)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        padding: 0;
+    } 
+    @media (${props => props.theme.screenQueries.mobileL}) {
+        padding: 1.5rem 2rem;
+    } 
+`;
+
 export const FeaturedCollectionCard = (props) => (
-    <VCenteredCard style={{width: '100%', height: '300px'}} hasBG={true} backgroundImage={testBackgroundImage}>
+    <CollectionCard style={{width: '100%', height: '300px'}} hasBG={true} backgroundImage={testBackgroundImage}>
         <ScalableHeader style={{textAlign: 'center', marginBottom: '1rem', width: '100%'}}>Mountains</ScalableHeader>
-        <OrangeGradient>Featured Collections</OrangeGradient>
-    </VCenteredCard>
+        <OrangeButton>Featured Collections</OrangeButton>
+    </CollectionCard>
 );
 
 export const FeaturedTeamCard = props => (

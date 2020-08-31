@@ -1,4 +1,3 @@
-import styled, { css } from 'styled-components';
 import React from 'react';
 import {
     Card,
@@ -23,6 +22,7 @@ export const VCenteredCard = props => (
         BG={props.hasBG}
         BGSource={props.backgroundImage}
         style={{...props.style}}
+        className={props.className}
     >
         <VCenteredContent>
             {props.children}

@@ -22,7 +22,7 @@ export default (props) => (
                 dribbbleLink={'#'}
                 twitterLink={'#'}
             />
-            <ClockAndLocation />
+            <ClockAndLocation location={'Eugene, OR USA'}/>
         </MainContent>
     </div>
 );

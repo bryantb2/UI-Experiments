@@ -1,8 +1,5 @@
-import styled from "styled-components";
 import {
     Biography,
-    MessengerDashboard,
-    OneThirdCol,
     Skills,
     Website
 } from "../components";

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import {
     ProfileImage,
     BlackThinHeader,
-    OrangeGradient,
+    OrangeButton,
     BlackThinTextSmall
 } from '../elements';
 
@@ -66,7 +66,7 @@ const UserBio = styled(BlackThinTextSmall)`
     } 
 `;
 
-const FollowButton = styled(OrangeGradient)`
+const FollowButton = styled(OrangeButton)`
     @media (${props => props.theme.screenQueries.mobileS}) {
         display: block;
         width: 50%;

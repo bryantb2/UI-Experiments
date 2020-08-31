@@ -27,6 +27,40 @@ const ClockContent = styled(ContentItem)`
 const IconContent = styled(ContentItem)`
     flex-grow: 2;
     justify-content: space-between;
+    
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        margin-bottom: 1rem;
+    }
+`;
+
+const MessageBubble = styled(MessageTextBubble)`
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        margin-bottom: 1rem;
+    } 
+`;
+
+const LocationHeading = styled(GreyThinTextSmall)`
+    text-align: right;
+    margin: 0;
+    
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        text-align: center;
+    }
+    @media (${props => props.theme.screenQueries.tablet}) {
+        text-align: right;
+    }  
+`;
+
+const ClockHeading = styled(ClockHeader)`
+    text-align: right;
+    margin-top: 0;
+    
+    @media (${props => props.theme.screenQueries.mobileS}) {
+        text-align: center;
+    } 
+    @media (${props => props.theme.screenQueries.tablet}) {
+        text-align: right;
+    } 
 `;
 
 const MessageIconBubble = props => (
@@ -65,14 +99,14 @@ const RealTimeClock = props => {
     }, []);
 
     return (
-        <ClockHeader style={{...props.style}}>{moment(time).format("hh:mm A")}</ClockHeader>
+        <ClockHeading>{moment(time).format("hh:mm A")}</ClockHeading>
     )
 };
 
 export const MessageInput = props => (
-    <MessageTextBubble>
+    <MessageBubble>
         <UnstyledInput type={'text'} placeholder={'Send a message to Jenna...'} />
-    </MessageTextBubble>
+    </MessageBubble>
 );
 
 export const SocialIcons = props => (
@@ -85,7 +119,7 @@ export const SocialIcons = props => (
 
 export const ClockAndLocation = props => (
     <ClockContent>
-        <GreyThinTextSmall style={{marginBottom: 0, textAlign: 'right'}}>{props.location}</GreyThinTextSmall>
-        <RealTimeClock style={{marginTop: 0, textAlign: 'right'}} />
+        <LocationHeading>{props.location}</LocationHeading>
+        <RealTimeClock />
     </ClockContent>
 );

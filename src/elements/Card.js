@@ -10,14 +10,14 @@ export const Card = styled.div(
         border-radius: 15px;
         margin-bottom: 1.5rem;
         background-image: ${
-        props.BG === true ? 'url(' + props.BGSource + ')' : 'none'
-    };
+            props.BG === true ? 'url(' + props.BGSource + ')' : 'none'
+        };
         background-repeat: no-repeat;
         background-size: cover;
         background-color: ${
-        props.BG === true ? 'none' : 'white'
-    };
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            props.BG === true ? 'none' : 'white'
+        };
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
     `);
 
 export const VCenteredContent = styled.div`

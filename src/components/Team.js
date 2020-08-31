@@ -3,7 +3,7 @@ import React from "react";
 import {
     BlackThinHeader,
     GreyThinTextSmall,
-    OrangeGradient,
+    OrangeButton,
     ProfileFollowCount,
     ProfileImage
 } from "../elements";
@@ -34,7 +34,7 @@ export const TeamDescription = props => (
     <RelativeParent style={{...props.style}}>
         <BlackThinHeader style={{marginTop: '1rem', marginBottom: '0'}}>{props.teamName}</BlackThinHeader>
         <GreyThinTextSmall style={{marginTop: '0'}}>Formed in {props.creationDate}</GreyThinTextSmall>
-        <OrangeGradient style={{marginBottom: '0.5rem'}}>Follow</OrangeGradient>
+        <OrangeButton style={{marginBottom: '0.5rem'}}>Follow</OrangeButton>
         <GreyThinTextSmall>Jenna is a Member Since Nov, 2014</GreyThinTextSmall>
     </RelativeParent>
 );
