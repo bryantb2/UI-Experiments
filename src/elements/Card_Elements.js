@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 import React from 'react';
 
-export const Card = styled.div(
+export const Card_Elements = styled.div(
     props => css`
         height: auto;
         width: auto;

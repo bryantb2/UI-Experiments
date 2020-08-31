@@ -16,7 +16,6 @@ export const CollectionsIconList = props => (
                 <CollectionImage
                     key={collection.name}
                     src={collection.link}
-                    width="100px"
                 />
             )
         }

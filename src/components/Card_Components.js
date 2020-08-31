@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-    Card,
+    Card_Elements,
     VCenteredContent,
     CardContent
 } from '../elements';
 
 export const FlexCard = props => (
-    <Card
+    <Card_Elements
         BG={props.hasBG}
         BGSource={props.backgroundImage}
         style={{...props.style}}
@@ -14,11 +14,11 @@ export const FlexCard = props => (
         <CardContent>
             {props.children}
         </CardContent>
-    </Card>
+    </Card_Elements>
 );
 
 export const VCenteredCard = props => (
-    <Card
+    <Card_Elements
         BG={props.hasBG}
         BGSource={props.backgroundImage}
         style={{...props.style}}
@@ -27,7 +27,7 @@ export const VCenteredCard = props => (
         <VCenteredContent>
             {props.children}
         </VCenteredContent>
-    </Card>
+    </Card_Elements>
 );
 
 

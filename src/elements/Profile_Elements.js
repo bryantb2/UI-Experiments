@@ -12,6 +12,8 @@ export const CollectionImage = styled.img`
     border-radius: 50%;
     width: 120px;
     height: 120px;
+    margin-right: 1rem;
+    margin-bottom: 1rem
 `;
 
 export const ProfileFollowCount = styled.div`

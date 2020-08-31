@@ -7,10 +7,10 @@ import {
     TwoThirdCol,
     OneThirdCol
 } from '../components';
-import UserProfile from '../containers/User_Profile';
-import UserAsideContent from '../containers/User_Aside';
-import MessengerDashboard from '../containers/Messenger_Dashboard';
-import { FeaturedCollectionCard, FeaturedTeamCard, PopularCollectionsCard } from '../containers/UI_Cards';
+import UserProfile from '../containers/UserProfile';
+import UserAsideContent from '../containers/UserAside';
+import MessengerDashboard from '../containers/MessengerDashboard';
+import { FeaturedCollectionCard, FeaturedTeamCard, PopularCollectionsCard } from '../containers/UICards';
 
 // create flexible containers for content
 const MainContentContainer = styled(FourFifthsCol)`
